@@ -1,12 +1,25 @@
-import Profile from './Profile.js';
+const person ={
+  name:"Gregorio Y. Zara",
+  theme:{
+    backgroundColor: "black",
+    color:"pink"
+  }
+};
 
-export default function Gallery(){
-  return (
-    <section>
-      <h1>Amezing scientists</h1>
-      <Profile/>
-      <Profile/>
-      <Profile/>
-    </section>
+export default function TodoList(){
+  return(
+    <div style={person.theme}>
+      <h1>{person.name}</h1>
+      <img
+        className="avatar"
+        src="https://i.imgur.com/7vQD0fPs.jpg"
+        alt="Gregorio Y. Zara"
+      />
+      <ul>
+        <li>Imporve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
   );
 }
