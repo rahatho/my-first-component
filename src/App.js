@@ -2,7 +2,7 @@ import { people } from "./data";
 import { getImageUrl } from "./utils";
 
 export default function List(){
-  const listItems = people.map(person => 
+  const listItems = people.filter(person => person.profession==="chemist").map(person=>
     <li key={person.id}>
       <img 
         src={getImageUrl(person)}
