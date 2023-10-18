@@ -1,29 +1,24 @@
-function Item({name, isPacked}){
-  return (
-    <li className="item">
-      {name} {isPacked && '🗸'}
+import { people } from "./data";
+import { getImageUrl } from "./utils";
+
+export default function List(){
+  const listItems = people.map(person => 
+    <li key={person.id}>
+      <img 
+        src={getImageUrl(person)}
+        alt={person.name}
+      />
+      <p>
+        <b>{person.name} : </b>
+        {" " + person.profession + " "}
+        known for {person.accomplishment}
+      </p>
     </li>
   );
-}
-
-export default function PackageList(){
   return(
-    <section>
-      <h1>Sally Ride's Package List</h1>
-      <ul>
-        <Item
-          isPacked={true}
-          name="Space suit"
-        />
-        <Item
-          isPacked={true}
-          name="Helmet with a golden leaf"
-        />
-        <Item
-          isPacked={false}
-          name="Photo of Tam"
-        />
-      </ul>
-    </section>
+    <article>
+      <h1>Scientists</h1>
+      <ul>{listItems}</ul>
+    </article>
   );
 }
