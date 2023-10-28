@@ -1,32 +1,30 @@
 import {recipes} from "./data.js";
 
 export default function RecipeList(){
-  const recipesList = recipes.map(recipe => {
-      return (
-      <li key={recipe.id}>
-        <h2>{recipe.name}</h2>
-        <ul>
-          {getIngredients(recipe)}
-        </ul>
-    </li>);
-  }
-        );
+  
   return (
    <div>
     <h1>Recipes</h1>
-    <ul>
-      {recipesList}
-    </ul>
+     {recipes.map(recipe=>
+      <Recipe
+        id={recipe.id}
+        name={recipe.name}
+        ingredients={recipe.Ingredients}/>
+        )}
+
    </div>
   );
   }
 
- 
+ function Recipe({id, name, ingredients}){
+   return <div key={id}>
+    <h2>{name}</h2>
+    <ul>
+      {ingredients.map(ingredient=><li key={ingredient}>{ingredient}</li>)}
+    </ul>
+   </div>
+ }
 
 
-function getIngredients(recipe){
-  const ingredientList = recipe.Ingredients?.map( x => 
-     <li key={x}>{x}</li>);
-  return ingredientList;
-}
+
 
