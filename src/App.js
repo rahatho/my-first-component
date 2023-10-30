@@ -1,24 +1,24 @@
-const poem = {
-  lines: [
-    "I write, erase, rewrite",
-    "Erase again, and then",
-    "A poppy blooms."
-  ]
-};
+  function Recipe({ drinkers }) {
+    return (
+      <ol>
+        <li> Boil {drinkers} cups of water.</li>
+        <li> Add {drinkers} spoon of tea and {0.5 * drinkers} spoons of spice.</li>
+        <li> Add {0.5 * drinkers} cups of milk to boil and sugar to taste.</li>
+      </ol>
+    );
+  }
 
 
-export default function Poem(){
-  return (
-    <article>
-      {poem.lines.map((line, index) => 
-        <p key={index}>
-          {index !== 0 && <hr/>} {line} 
-        </p>
-      )}
-    </article>
-  )
-}
-
-
+  export default function App() {
+    return (
+      <section>
+        <h1> Spiced Chai Recipe</h1>
+        <h2> For tow</h2>
+        <Recipe drinkers={2}/>
+        <h2> For a gathering</h2>
+        <Recipe drinkers={4}/>
+      </section>
+    );
+  }
 
 
