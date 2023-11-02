@@ -1,16 +1,17 @@
-import Profile from "./Profile.js";
+import { useState, useEffect } from "react";
+import StoryTray from "./StoryTray";
+
+let initialStories = [
+    {id: 0, label: "Ankit's Story"},
+    {id: 1, label: "Taylor's Story"},
+];
 
 export default function App() {
-    return (
-        <>
-            <Profile person={{
-                imageId: 'lrWQx8l',
-                name: 'Subramanyan Chandrasekhar'
-            }}/>
-            <Profile person={{
-                imageId: 'MK3eW3A',
-                name: 'Creola Katherine Johnson'
-            }}/>
-        </>
-    );
+    let [stories, setStories] = useState([...initialStories]);
+    let time = useTime();
+
+    // HACK: Prevent the memory from growing forever while you read docs.
+    // We're breaking our own rules here.
+
+
 }
