@@ -1,22 +1,16 @@
-import {useState, useEffect} from 'react';
-import Clock from './Clock.js';
+import Profile from "./Profile.js";
 
-function useTime() {
-    const [time, setTime] = useState(() => new Date());
-
-    useEffect(() => {
-        const id = setInterval(() => {
-            setTime(new Date());
-        }, 1000);
-        return () => clearInterval(id);
-    }, []);
-    
-    return time;
-}
-
-export default function App(){
-    const time = useTime();
+export default function App() {
     return (
-        <Clock time={time}/>
+        <>
+            <Profile person={{
+                imageId: 'lrWQx8l',
+                name: 'Subramanyan Chandrasekhar'
+            }}/>
+            <Profile person={{
+                imageId: 'MK3eW3A',
+                name: 'Creola Katherine Johnson'
+            }}/>
+        </>
     );
 }
