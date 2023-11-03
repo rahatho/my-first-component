@@ -3,8 +3,7 @@ import StoryTray from "./StoryTray";
 
 let initialStories = [
     {id: 0, label: "Ankit's Story"},
-    {id: 1, label: "Taylor's Story"},
-    {id: 2, label: "Create Story"}
+    {id: 1, label: "Taylor's Story"}
 ];
 
 export default function App() {
